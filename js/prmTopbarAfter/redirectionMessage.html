@@ -1,0 +1,34 @@
+<div class="redirection-container">
+  <div id="redirectionMessage" class="layout-column" layout="column"
+    ng-show="$ctrl.showRedirectionMessage && !$ctrl.parentCtrl.searchInProgress">
+    <!-- Icône de fermeture -->
+    <button class="close-icon-button" ng-click="$ctrl.externalSearchMsgOnClick()">
+      <prm-icon icon-type="svg" svg-icon-set="navigation" icon-definition="ic_close_24px">
+        <md-icon md-svg-icon="navigation:ic_close_24px" alt="Ne plus afficher ce message" class="md-primoExplore-theme" md-tooltip="Ne plus afficher ce message"
+          aria-label="Ne plus afficher ce message"></md-icon>
+      </prm-icon>
+    </button>
+
+    <md-card class="default-card _md md-primoExplore-theme">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{ $ctrl.titleText }}</span>
+        </md-card-title-text>
+      </md-card-title>
+
+      <md-card-content>
+        <p>{{ $ctrl.contentText }}</p>
+        <p>{{ $ctrl.footerText }}</p>
+        <div layout="row" layout-wrap layout-align="space-around center" class="layout-row redirectionButtonsRow">
+          <md-button id="{{link.vid }}-redirect-button" class="md-raised md-primary"
+            ng-repeat="link in $ctrl.redirectLinks" ng-click="$ctrl.updateRedirectUrl(link.domain,link.vid)">
+            {{link.name}}
+            <md-tooltip>
+              {{link.ariaLabel}}
+            </md-tooltip>
+          </md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

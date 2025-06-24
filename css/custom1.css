@@ -2872,25 +2872,73 @@ prm-login.layout-row prm-login-after h2 {
 }
 
 /* Message de redirection Migration primo VE */
+.redirection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#redirectionMessage {
+  margin: 20px auto; /* Ajoute de l'espace autour de la div */
+  max-width: 90%; /* Limite la largeur pour éviter le débordement */
+  box-sizing: border-box; /* Inclut les bordures et les paddings dans la largeur totale */
+  background-color: rgba(243, 243, 243, 0.267);
+  border-radius: 15px;
+}
+/* Positionne l'icône de fermeture en haut à droite */
+#redirectionMessage {
+  position: relative; /* Nécessaire pour positionner l'icône par rapport au conteneur */
+}
+
+#redirectionMessage .close-icon-button {
+  position: absolute;
+  top: 15px; /* Ajustez selon vos besoins */
+  right: 15px; /* Ajustez selon vos besoins */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Assurez-vous que l'icône est au-dessus du contenu */
+}
+
+#redirectionMessage .close-icon-button prm-icon md-icon {
+  width: 30px;
+  height: 30px;
+  fill: #000; /* Couleur de l'icône, ajustez selon vos besoins */
+}
+#redirectionMessage md-card {
+  padding: 10px; /* Ajoute de l'espace intérieur pour le contenu */
+  border-radius: 15px;
+  background-color: rgba(243, 243, 243, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour un effet de profondeur */
+}
+
+#redirectionMessage md-card-title {
+  padding: 10px !important; /* Réduit l'espace intérieur pour le titre */
+}
 #redirectionMessage md-card-title-text{
   text-align: center;
   font-size: 1.5em;
+  font-weight: bold; /* Met le titre en gras */
   color: #3a3a3a; /* Couleur du texte */
 }
 
 #redirectionMessage .redirectionButtonsRow {
-  margin: 10px 50px;
-  /* Réduit l'espacement vertical entre les lignes */
+  display: flex; /* Active Flexbox */
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+  justify-content: space-around; /* Ajoute un espacement égal entre les boutons */
+  align-items: center; /* Centre les boutons verticalement */
+  gap: 10px; /* Définit un espacement constant entre les boutons */
+  margin: 10px 50px; /* Réduit l'espacement vertical entre les lignes */
 }
 
 #redirectionMessage .redirectionButtonsRow .md-button {
-  margin: 5px; /* Réduit l'espacement autour des boutons */
+  margin: 20px; /* Ajoute un espacement constant autour des boutons */
   flex: 1 1 auto; /* Permet aux boutons de s'adapter à l'espace disponible */
-  max-width: 250 px; /* Limite la largeur maximale des boutons */
+  max-width: 250px; /* Limite la largeur maximale des boutons */
   color: #fff; /* Couleur du texte */
   white-space: normal; /* Permet au texte de revenir à la ligne */
   text-align: center; /* Centre le texte dans le bouton */
-  padding: 10px; /* Ajoute un peu de padding pour améliorer l'apparence */
+  padding: 10px 10px; /* Ajoute un peu de padding pour améliorer l'apparence */
+  border-radius: 10px; /* Ajoute des coins arrondis */
   transition: background-color 0.3s ease; /* Ajoute une transition pour l'effet de survol */
 }
 #redirectionMessage .redirectionButtonsRow .md-button:hover {
