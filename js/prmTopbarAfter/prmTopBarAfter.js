@@ -54,8 +54,9 @@ class prmTopbarAfterController {
       const currentUrl = this.$window.location.href; // Récupère l'URL actuelle
       const newUrl = currentUrl.replace(this.$window.location.origin, `https://${domain}`);
       const url = newUrl.replace(/vid=[^&]+/, `vid=33PUDB_${vid}:33PUDB_${vid}_VU1`);
-      console.log(`URL mise à jour : ${url}`);
-      this.$window.location.href = url; // Redirige vers la nouvelle URL
+      const defurl = url.replace(/institution=[^&]+/, `institution=33PUDB_${vid}`);
+      console.log(`URL mise à jour : ${defurl}`);
+      this.$window.location.href = defurl; // Redirige vers la nouvelle URL
     }
 
     externalSearchMsgOnClick (){
